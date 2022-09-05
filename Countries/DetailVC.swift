@@ -22,10 +22,9 @@ class DetailVC: UIViewController {
     @IBOutlet weak var countryCode: UILabel!
     
     var wikiURL = "https://www.wikidata.org/wiki/"
-    
+
     var cUrl = "https://wft-geo-db.p.rapidapi.com/v1/geo/countries/"
     var apiKey = "?rapidapi-key=bfd86b0870msh32c44b7855eb093p1fc5b7jsnf266af99ac2e"
-    var imageUrL: String = ""
     var mCountry = ListOfCountries()
     @IBOutlet weak var savedCountry: UIBarButtonItem!
     
@@ -47,9 +46,11 @@ class DetailVC: UIViewController {
         }else{
             savedCountry.image = UIImage(systemName: "star")
         }
-        
+        getImage()
+    }
+    
+    func getImage(){
         // Loading image view
-       
         AF.request(cUrl).response { [self]  response in
             debugPrint("Response: \(response)")
             if let data = response.data {
@@ -57,16 +58,18 @@ class DetailVC: UIViewController {
                     print("Error with JSON")
                     return
                 }
-                imageUrL = json["data"]["flagImageUri"].string!
-                let mySVGImage: SVGKImage = SVGKImage(contentsOf: URL(string: imageUrL))
-                DispatchQueue.main.async {
-                    self.countryImage.image = mySVGImage.uiImage
-                    //self.countryImage.image =  UIImage(data: data)
+                if let imageUrL = json["data"]["flagImageUri"].string{
+                    print(imageUrL)
+                    let mySVGImage: SVGKImage = SVGKImage(contentsOf: URL(string: imageUrL))
+                    DispatchQueue.main.async {
+                        self.countryImage.image = mySVGImage.uiImage
+                    }
                 }
             }else{
                 print("Data error")
             }
         }
+        
     }
     
     
