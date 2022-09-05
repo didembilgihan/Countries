@@ -58,6 +58,12 @@
                                                 <constraint firstItem="s8u-ie-wCt" firstAttribute="centerY" secondItem="LWH-b7-rjg" secondAttribute="centerY" id="w5S-Dj-6h3"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.borderWidth" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="savedCountryButton" destination="s8u-ie-wCt" id="prt-Ld-rea"/>
                                             <outlet property="savedCountryName" destination="5X3-uG-EfG" id="AIM-80-OU4"/>
@@ -141,6 +147,12 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="a45-GN-NDU" secondAttribute="trailing" constant="10" id="vid-jT-3yn"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.borderWidth" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <outlet property="homeCountryButton" destination="a45-GN-NDU" id="MO5-cz-9Te"/>
                                             <outlet property="homeCountryName" destination="jFg-xn-g8M" id="8Cp-RD-4Y4"/>
