@@ -63,6 +63,8 @@ class DetailVC: UIViewController {
                     self.countryImage.image = mySVGImage.uiImage
                     //self.countryImage.image =  UIImage(data: data)
                 }
+            }else{
+                print("Data error")
             }
         }
     }
