@@ -49,11 +49,7 @@ class DetailVC: UIViewController {
         }
         
         // Loading image view
-        // imageURL received in correct format but data could not fetched.
-        // Therefore, image did not load.
-        // In order not to give error, I commented it.
-        
-       /*
+       
         AF.request(cUrl).response { [self]  response in
             debugPrint("Response: \(response)")
             if let data = response.data {
@@ -68,7 +64,7 @@ class DetailVC: UIViewController {
                     //self.countryImage.image =  UIImage(data: data)
                 }
             }
-        }*/
+        }
     }
     
     
