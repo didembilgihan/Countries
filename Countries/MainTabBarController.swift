@@ -68,6 +68,8 @@ class MainTabBarController: UITabBarController {
                         }
                     }
                 }
+            }else{
+                print("NSData Error")
             }
             
         }
